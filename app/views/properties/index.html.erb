@@ -1,11 +1,11 @@
 <%= render 'layouts/marketing'%>
-<div class="row" >
-  <div class="span12">
-		<h1 class="page-header">Our Properties</h1>
-			<ul class="thumbnails">
+
+<div class="cont-fix">
+	<h1 class="page-header">Our Properties</h1>
+	<ul class="thumbnails">
 		<% @properties.each do |property| -%>
 		  	
-			  <li class="span4">
+			  <li class="span3">
 			    <div class="thumbnail">
 			      <h3>
 			      	<%= property.name %>
@@ -23,13 +23,7 @@
 				  <% end %>
 			    </div>
 			  </li>
-		
 		<% end -%>
 	</ul>
 	
-	<% if user_signed_in? %>
-		<%= link_to "Create New Property", new_property_path, :class => 'btn btn-primary' %>
-	<% end %>
-
-  </div>
 </div>

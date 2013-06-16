@@ -30,7 +30,7 @@
 		<%= render 'layouts/header' %>
 		
       <!-- Example row of columns -->
-      <div class="row">
+      <div class="row" id="cont-back">
         <% [:notice, :error, :alert].each do |level| %>
             <% unless flash[level].blank? %>
               <div data-alert="alert" class="alert alert-<%= flash_class(level) %> fade in">
