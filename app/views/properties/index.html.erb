@@ -1,0 +1,35 @@
+<%= render 'layouts/marketing'%>
+<div class="row" >
+  <div class="span12">
+		<h1 class="page-header">Our Properties</h1>
+			<ul class="thumbnails">
+		<% @properties.each do |property| -%>
+		  	
+			  <li class="span4">
+			    <div class="thumbnail">
+			      <h3>
+			      	<%= property.name %>
+			      </h3>
+			      <%= link_to image_tag(property.assets.first.asset.url(:medium)), property %>
+			      
+			      <p>
+			      	<%= truncate(strip_tags(property.description),:length => 100) %>
+			    	<%= link_to 'More Details', property ,:class=>"label label-success"%>
+			      </p>
+			      
+			      <% if user_signed_in? %>
+			        <%= link_to "Edit", edit_property_path(property) %>
+	      			<%= link_to "Destroy", property_path(property), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+				  <% end %>
+			    </div>
+			  </li>
+		
+		<% end -%>
+	</ul>
+	
+	<% if user_signed_in? %>
+		<%= link_to "Create New Property", new_property_path, :class => 'btn btn-primary' %>
+	<% end %>
+
+  </div>
+</div>

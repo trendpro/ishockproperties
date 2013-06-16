@@ -1,0 +1,86 @@
+
+<div class="clearfix">
+   <%= f.label :name, t("activerecord.attributes.property.name", :default => "Name"), :class => :label %>
+  <div class="input">
+    <%= f.text_field :name, :class => 'text_field' %>
+  </div>
+</div>
+
+<div class="clearfix">
+   <%= f.label :description, t("activerecord.attributes.property.description", :default => "Description"), :class => :label %>
+  <div class="input">
+    <%= f.text_area :description, :class => 'text_area' %>
+  </div>
+</div>
+
+<div class="clearfix">
+   <%= f.label :location, t("activerecord.attributes.property.location", :default => "Location"), :class => :label %>
+  <div class="input">
+    <%= f.text_field :location, :class => 'text_field' %>
+  </div>
+</div>
+
+<div class="clearfix">
+   <%= f.label :status, t("activerecord.attributes.property.status", :default => "Status"), :class => :label %>
+  <div class="input">
+  	<%= f.select :status, [['Available','available'],['Sold','sold']], :class => 'text_field'%>
+  </div>
+</div>
+
+<div class="clearfix">
+   <%= f.label :price, t("activerecord.attributes.property.price", :default => "Price"), :class => :label %>
+  <div class="input">
+    <%= f.number_field :price, :class => 'number_field' %>
+  </div>
+</div>
+
+<div class="clearfix">
+   <%= f.label :quantity, t("activerecord.attributes.property.price", :default => "Available Quantity"), :class => :label %>
+  <div class="input">
+    <%= f.number_field :quantity, :class => 'number_field' %>
+  </div>
+</div>
+
+<div class="clearfix">
+    <h4>New Files</h4>
+	
+	<%= f.fields_for :assets do |asset_fields| %>
+	
+		<% if asset_fields.object.new_record? %>
+		<p>
+			<%= asset_fields.file_field :asset %>
+			<%= asset_fields.text_field :caption, :class => 'text_area',:placeholder =>'Image caption' %>
+		</p>
+		<% end %>
+	
+	<% end %>
+</div>
+
+<div class="clearfix">
+    <h4>Old Files</h4>	
+	<ul class="thumbnails">
+		<%= f.fields_for :assets do |asset_fields| %>
+			<% unless asset_fields.object.new_record? %>
+			  <li class="span4">
+			    <div class="thumbnail">
+			      <%= link_to image_tag(asset_fields.object.asset.url(:original)), asset_fields.object.asset.url(:original) %>
+				  <%= asset_fields.check_box :_destroy %>	
+			      <h3>
+			      	<%= @property.name %>
+			      </h3>
+			      <p>
+			      	<%= truncate(strip_tags(asset_fields.object.caption),:length => 100) %>
+			    	<%= link_to 'More Details', @property %>
+			      </p>
+			    </div>
+			  </li>
+			<% end %>
+		<% end %>
+	</ul>
+</div>
+
+
+<div class="form-actions">
+  <button class="btn primary" type="submit">Save</button> or
+	<%= link_to "Cancel", properties_path %>
+</div>

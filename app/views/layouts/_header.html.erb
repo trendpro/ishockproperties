@@ -1,0 +1,41 @@
+ <div class="masthead">
+    <a class="brand" href="#"><%= image_tag("logo.png")%></a>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <ul class="nav">
+            <li class="active">
+            	<%= link_to "Home", properties_path %>
+            </li>
+            
+            <li>
+            	<%= link_to "Properties", properties_path %>
+            </li>
+            <li>
+            	<%= link_to "About Us", about_path %>
+            </li>
+            <li>
+            	<%= link_to "Contact Us", contact_path %>
+            </li>
+            
+            <li>
+            	<%= link_to "Available Property", availableproperties_path %>
+            </li>
+            <li>
+            	<% if user_signed_in? %>
+            		<%= link_to "Logout", destroy_user_session_path, :method=>'delete' %>
+            	<% else%>
+            	    <%= link_to "Login", new_user_session_path %>
+            	<% end %>
+            </li>
+            <li>
+            	<% if user_signed_in? %>
+        			<%= link_to "New Property", new_property_path %>
+            	<% end %>
+      	
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- /.navbar -->
+  </div>

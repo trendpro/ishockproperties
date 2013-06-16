@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="span2">
+  	<p></p>
+  </div>
+  <div class="span8">
+ 	<%= form_for @property, :html => { :multipart => true }, :url => property_path(@property), :html => { :class => "edit_property", :id => "edit_property" } do |f| -%>
+	  <input name="_method" type="hidden" value="put" />
+	  <%= render :partial => "form", :locals => {:f => f} %>
+	<% end -%>
+  </div>
+  <div class="span2">
+  	<p></p>
+  </div>
+</div>

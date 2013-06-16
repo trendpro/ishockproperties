@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="span2">
+  	<p></p>
+  </div>
+  <div class="span8">
+ 	<h1 class="page-header"><%= @property.name %></h1>
+
+	<label class="label"><%= t("activerecord.attributes.property.description", :default => t("activerecord.labels.description", :default => "Description")) %>:</label>
+	<p><%= @property.description %></p>
+	
+	<label class="label"><%= t("activerecord.attributes.property.location", :default => t("activerecord.labels.location", :default => "Location")) %>:</label>
+	<p><%= @property.location %></p>
+	
+	<label class="label"><%= t("activerecord.attributes.property.status", :default => t("activerecord.labels.status", :default => "Status")) %>:</label>
+	<p><%= @property.status %></p>
+	
+	<label class="label"><%= t("activerecord.attributes.property.price", :default => t("activerecord.labels.price", :default => "Price")) %>:</label>
+	<p><%= @property.price %></p>
+	
+	
+	<div class="clearfix">
+	    <h2 class="page-header"><%= @property.name %> Pictures</h2>	
+		<ul class="thumbnails">
+			<%= form_for @property, :html => { :multipart => true }, :url => property_path(@property), :html => { :class => "edit_property", :id => "edit_property" } do |f| -%>
+	  				<input name="_method" type="hidden" value="put" />
+			<%= f.fields_for :assets do |asset_fields| %>
+				<% unless asset_fields.object.new_record? %>
+				  <li class="span4">
+				    <div class="thumbnail">
+				      <%= link_to image_tag(asset_fields.object.asset.url(:original)), asset_fields.object.asset.url(:original) %>
+				      <h3>
+				      	<%= @property.name %>
+				      </h3>
+				      <p>
+				      	<%= truncate(strip_tags(asset_fields.object.caption),:length => 100) %>
+				    	<%= link_to 'More Details', @property ,:class=>"label label-success"%>
+				      </p>
+				    </div>
+				  </li>
+				<% end %>
+			<% end %>
+		<% end -%>
+		</ul>
+	</div>
+	<div class="form-actions">
+	<%= link_to "Back to Properties", properties_path, :class => 'btn'  %>
+	
+	<% if user_signed_in? %>
+		<%= link_to "Edit", edit_property_path(@property), :class => 'btn' %>
+		<%= link_to "Delete", property_path(@property), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn' %>
+	<% end %>
+	</div>
+  </div>
+  <div class="span2">
+  	<p></p>
+  </div>
+</div>
