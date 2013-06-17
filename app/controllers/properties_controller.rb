@@ -19,7 +19,7 @@ class PropertiesController < ApplicationController
   # GET /properties/1.json
   def show
     @property = Property.find(params[:id])
-    4.times { @property.assets.build }
+    5.times { @property.assets.build }
 
     respond_to do |format|
       format.html # show.html.erb
@@ -31,7 +31,7 @@ class PropertiesController < ApplicationController
   # GET /properties/new.json
   def new
     @property = Property.new
-    4.times { @property.assets.build }
+    5.times { @property.assets.build }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,7 +42,7 @@ class PropertiesController < ApplicationController
   # GET /properties/1/edit
   def edit
     @property = Property.find(params[:id])
-    4.times { @property.assets.build }
+    5.times { @property.assets.build }
   end
 
   # POST /properties
