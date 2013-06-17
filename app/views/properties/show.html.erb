@@ -27,13 +27,12 @@
 				<% unless asset_fields.object.new_record? %>
 				  <li class="span4">
 				    <div class="thumbnail">
-				      <%= link_to image_tag(asset_fields.object.asset.url(:original)), asset_fields.object.asset.url(:original) %>
+				      <%= link_to image_tag(asset_fields.object.asset.url(:large)), '#'%>
 				      <h3>
 				      	<%= @property.name %>
 				      </h3>
 				      <p>
 				      	<%= truncate(strip_tags(asset_fields.object.caption),:length => 100) %>
-				    	<%= link_to 'More Details', @property ,:class=>"label label-success"%>
 				      </p>
 				    </div>
 				  </li>

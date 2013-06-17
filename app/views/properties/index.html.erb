@@ -8,7 +8,7 @@
 			      <h3>
 			      	<%= property.name %>
 			      </h3>
-			      <%= link_to image_tag(property.assets.first.asset.url(:medium)), property %>
+			      <%= link_to image_tag(property.assets.first.asset.url(:large)), property %>
 			      
 			      <p>
 			      	<%= truncate(strip_tags(property.description),:length => 100) %>

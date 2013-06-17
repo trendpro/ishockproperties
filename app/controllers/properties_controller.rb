@@ -104,4 +104,9 @@ class PropertiesController < ApplicationController
   def available
     @properties = Property.all
   end
+  
+  # Displays the websites home page.
+  def home
+    
+  end
 end

@@ -1,6 +1,6 @@
 
 <div class="clearfix">
-   <%= f.label :name, t("activerecord.attributes.property.name", :default => "Name"), :class => :label %>
+   <%= f.label :name, t("activerecord.attributes.property.name", :default => "Name") %>
   <div class="input">
     <%= f.text_field :name, :class => 'text_field' %>
   </div>
@@ -57,20 +57,19 @@
 </div>
 
 <div class="clearfix">
-    <h4>Old Files</h4>	
+    <h4>Your Files</h4>	
 	<ul class="thumbnails">
 		<%= f.fields_for :assets do |asset_fields| %>
 			<% unless asset_fields.object.new_record? %>
 			  <li class="span4">
 			    <div class="thumbnail">
-			      <%= link_to image_tag(asset_fields.object.asset.url(:original)), asset_fields.object.asset.url(:original) %>
+			      <%= link_to image_tag(asset_fields.object.asset.url(:large)), '#' %>
 				  <%= asset_fields.check_box :_destroy %>	
 			      <h3>
 			      	<%= @property.name %>
 			      </h3>
 			      <p>
 			      	<%= truncate(strip_tags(asset_fields.object.caption),:length => 100) %>
-			    	<%= link_to 'More Details', @property %>
 			      </p>
 			    </div>
 			  </li>
