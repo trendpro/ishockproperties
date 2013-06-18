@@ -59,6 +59,7 @@ GEM
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
+    dynamic_sitemaps (1.0.8)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -79,6 +80,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta-tags (1.5.0)
+      actionpack
     mime-types (1.23)
     multi_json (1.7.7)
     nokogiri (1.5.9)
@@ -158,7 +161,9 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   dalli
   devise (>= 2.2.3)
+  dynamic_sitemaps
   jquery-rails
+  meta-tags
   paperclip (~> 3.0)
   pg (= 0.15.0)
   rails (= 3.2.13)

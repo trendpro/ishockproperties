@@ -17,6 +17,8 @@ gem "twitter-bootstrap-rails", "~> 2.0.1.0"
 gem "paperclip", "~> 3.0"
 gem 'rmagick', '2.13.2'
 gem 'aws-sdk', '~> 1.0'
+gem 'meta-tags', :require => 'meta_tags'
+gem 'dynamic_sitemaps'
 
 # Gems used only for assets and not required
 # in production environments by default.
