@@ -9,8 +9,6 @@
 4/index.jpg: 4.jpg
 background.jpg: background.jpg
 background/index.jpg: background.jpg
-ceo1.jpg: ceo1.jpg
-ceo1/index.jpg: ceo1.jpg
 house1.jpg: house1.jpg
 house1/index.jpg: house1.jpg
 house2.jpg: house2.jpg
@@ -21,6 +19,8 @@ house4.jpg: house4.jpg
 house4/index.jpg: house4.jpg
 logo.png: logo.png
 logo/index.png: logo.png
+rceo.jpg: rceo.jpg
+rceo/index.jpg: rceo.jpg
 application.js: application.js
 application/index.js: application.js
 application.css: application.css
