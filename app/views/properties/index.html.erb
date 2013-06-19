@@ -11,6 +11,9 @@
 			      <%= link_to image_tag(property.assets.first.asset.url(:large)), property %>
 			      
 			      <p>
+			      	<h6>
+			      		From Kes.<%= property.price %>
+			      	</h6>
 			      	<%= truncate(strip_tags(property.description),:length => 100) %>
 			    	<%= link_to 'More Details', property ,:class=>"label label-success"%>
 			      </p>
