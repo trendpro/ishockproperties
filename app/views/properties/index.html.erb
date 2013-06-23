@@ -1,5 +1,5 @@
 <div class="cont-fix">
-	<h1 class="page-header">Our Properties</h1>
+	<h1 class="page-header scream-header">Our Properties</h1>
 	<ul class="thumbnails">
 		<% @properties.each do |property| -%>
 		  	
@@ -12,7 +12,7 @@
 			      
 			      <p>
 			      	<h6>
-			      		From Kes.<%= property.price %>
+			      		From <%= number_to_currency(property.price) %>
 			      	</h6>
 			      	<%= truncate(strip_tags(property.description),:length => 100) %>
 			    	<%= link_to 'More Details', property ,:class=>"label label-success"%>

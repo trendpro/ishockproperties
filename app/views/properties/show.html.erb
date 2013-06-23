@@ -15,7 +15,7 @@
 	<p><%= @property.status %></p>
 	
 	<label class="label"><%= t("activerecord.attributes.property.price", :default => t("activerecord.labels.price", :default => "Price")) %>:</label>
-	<p><%= @property.price %></p>
+	<p><%= number_to_currency(@property.price) %></p>
 	
 	
 	<div class="clearfix">
