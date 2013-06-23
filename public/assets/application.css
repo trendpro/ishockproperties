@@ -10167,3 +10167,8 @@ h6 {
 .label {
   background: #0088cc;
 }
+
+/* line 205, ../../app/assets/stylesheets/properties.css.scss */
+.scream-header {
+  color: #FF0000;
+}
