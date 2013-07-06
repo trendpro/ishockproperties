@@ -40,7 +40,7 @@ footer {
   border-top: 1px solid $grayMediumLight;
   color: #999;
   a {
-    color: #555;
+    color: $grayDarker;
     &:hover {
       color: $grayDarker;
     }

@@ -1,0 +1,40 @@
+<div class="span8 center">
+	<h2 class="page-header"><%= @avail_property.name %></h2>
+	
+	<p id="notice"><%= notice %></p>
+	
+	<p>
+	  <b>Name:</b>
+	  <%= @avail_property.name %>
+	</p>
+	
+	<p>
+	  <b>Unit price:</b>
+	  <%= @avail_property.unit_price %>
+	</p>
+	
+	<p>
+	  <b>Total number of units:</b>
+	  <%= @avail_property.total_number_of_units %>
+	</p>
+	
+	<p>
+	  <b>Sold out units:</b>
+	  <%= @avail_property.sold_out_units %>
+	</p>
+	
+	<p>
+	  <b>Available units:</b>
+	  <%= @avail_property.available_units %>
+	</p>
+	
+	<p>
+	  <b>Location:</b>
+	  <%= @avail_property.location %>
+	</p>
+	
+	<% if user_signed_in? %>
+		<%= link_to 'Edit', edit_avail_property_path(@avail_property) %> <% end %>|
+	<%= link_to 'Back', avail_properties_path %>
+	
+</div>

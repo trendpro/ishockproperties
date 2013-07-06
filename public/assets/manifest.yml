@@ -7,8 +7,14 @@
 3/index.jpg: 3.jpg
 4.jpg: 4.jpg
 4/index.jpg: 4.jpg
+_logo.jpg: _logo.jpg
+_logo/index.jpg: _logo.jpg
+b_logo.jpg: b_logo.jpg
+b_logo/index.jpg: b_logo.jpg
 background.jpg: background.jpg
 background/index.jpg: background.jpg
+g_logo.jpg: g_logo.jpg
+g_logo/index.jpg: g_logo.jpg
 house1.jpg: house1.jpg
 house1/index.jpg: house1.jpg
 house2.jpg: house2.jpg
@@ -21,6 +27,8 @@ logo.png: logo.png
 logo/index.png: logo.png
 rceo.jpg: rceo.jpg
 rceo/index.jpg: rceo.jpg
+s_logo.jpg: s_logo.jpg
+s_logo/index.jpg: s_logo.jpg
 application.js: application.js
 application/index.js: application.js
 application.css: application.css

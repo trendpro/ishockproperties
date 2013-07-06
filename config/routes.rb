@@ -1,4 +1,7 @@
 Ishackproperties::Application.routes.draw do
+  resources :avail_properties
+
+
   match 'sitemap.xml' => 'sitemaps#sitemap'
 
   resources :properties

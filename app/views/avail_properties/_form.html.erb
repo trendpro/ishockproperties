@@ -1,0 +1,41 @@
+<%= form_for(@avail_property) do |f| %>
+  <% if @avail_property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@avail_property.errors.count, "error") %> prohibited this avail_property from being saved:</h2>
+
+      <ul>
+      <% @avail_property.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :unit_price %><br />
+    <%= f.text_field :unit_price %>
+  </div>
+  <div class="field">
+    <%= f.label :total_number_of_units %><br />
+    <%= f.text_field :total_number_of_units %>
+  </div>
+  <div class="field">
+    <%= f.label :sold_out_units %><br />
+    <%= f.text_field :sold_out_units %>
+  </div>
+  <div class="field">
+    <%= f.label :available_units %><br />
+    <%= f.text_field :available_units %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

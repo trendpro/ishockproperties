@@ -1,0 +1,43 @@
+  <div class="span8 center">
+  	<h2 class="page-header">Available Properties</h2>
+  	<br />
+  	<br />
+	 <table class="table table-striped table-bordered">
+	  <thead>
+	    <tr>
+	      <th>Name</th>
+	      <th>Unit Price</th>
+	      <th>Total Number of Units.</th>
+	      <th>Sold out Units</th>
+	      <th>Available</th>
+	      <th>Location</th>
+	      <th></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+		
+		<% @avail_properties.each do |avail_property| %>
+		  <tr>
+		    <td><%= avail_property.name %></td>
+		    <td><%= avail_property.unit_price %></td>
+		    <td><%= avail_property.total_number_of_units %></td>
+		    <td><%= avail_property.sold_out_units %></td>
+		    <td><%= avail_property.available_units %></td>
+		    <td><%= avail_property.location %></td>
+		    <% if user_signed_in? %>
+		    	<td><%= link_to 'Edit', edit_avail_property_path(avail_property) %></td>
+		    	<td><%= link_to 'Destroy', avail_property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		   <% end %>
+		  </tr>
+		<% end %>
+	  </tbody>
+	</table>
+	
+	<br />
+	<% if user_signed_in? %>
+		<%= link_to 'Add New Property', new_avail_property_path %>
+	<% end %>
+  </div>
+
+
+

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  unit_price: MyString
+  total_number_of_units: MyString
+  sold_out_units: MyString
+  available_units: MyString
+  location: MyString
+
+two:
+  name: MyString
+  unit_price: MyString
+  total_number_of_units: MyString
+  sold_out_units: MyString
+  available_units: MyString
+  location: MyString
